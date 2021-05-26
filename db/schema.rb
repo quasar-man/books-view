@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_145124) do
+ActiveRecord::Schema.define(version: 2021_05_25_145553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,10 +54,28 @@ ActiveRecord::Schema.define(version: 2021_05_25_145124) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "categorizes", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_categorizes_on_book_id"
+    t.index ["category_id"], name: "index_categorizes_on_category_id"
+  end
+
   create_table "publishers", force: :cascade do |t|
     t.string "name", limit: 128
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_taggings_on_book_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -66,7 +84,22 @@ ActiveRecord::Schema.define(version: 2021_05_25_145124) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "writings", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_writings_on_author_id"
+    t.index ["book_id"], name: "index_writings_on_book_id"
+  end
+
   add_foreign_key "book_images", "books"
   add_foreign_key "book_reviews", "books"
   add_foreign_key "books", "publishers"
+  add_foreign_key "categorizes", "books"
+  add_foreign_key "categorizes", "categories"
+  add_foreign_key "taggings", "books"
+  add_foreign_key "taggings", "tags"
+  add_foreign_key "writings", "authors"
+  add_foreign_key "writings", "books"
 end
