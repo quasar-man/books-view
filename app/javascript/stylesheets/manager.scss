@@ -1,0 +1,30 @@
+@import "~bootstrap/scss/bootstrap";
+
+.wrapper {
+    text-align: center;
+    .content {
+        display: inline-block;
+        width: 960px;
+        border: 1px solid #a1a1a1;
+        border-radius: 5px;
+        padding-top: 32px;
+
+        .add-btn-area {
+            text-align: right;
+        }
+        .meintenance-form {
+            display: inline-block;
+        }
+        .title-form {
+            font-weight: bold;
+            width: 20%;
+        }
+        .input-form {
+            width: 48%;
+        }
+        .btn-form {
+            text-align: right;
+            width: 30%;
+        }
+    }
+}
