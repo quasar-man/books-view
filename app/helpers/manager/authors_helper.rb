@@ -1,0 +1,2 @@
+module Manager::AuthorsHelper
+end
