@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :manager do
     resources :categories
     resources :authors
+    resources :tags
   end
 
   get "*path", controller: "application", action: "manager_render_404"

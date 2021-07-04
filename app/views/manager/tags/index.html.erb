@@ -1,0 +1,34 @@
+<div class="content">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>CreatedAt</th>
+        <th>UpdatedAt</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tags.each do |tag| %>
+        <tr>
+          <td><%= tag.id %></td>
+          <td><%= tag.name %></td>
+          <td><%= tag.created_at %></td>
+          <td><%= tag.updated_at %></td>
+          <td>
+            <%= link_to "Edit", edit_manager_tag_path(tag), class: "btn btn-success me-md-2" %>
+            <%= link_to "Delete", manager_tag_path(tag), :method => :delete, :class => "btn btn-danger me-md-2" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5" class="add-btn-area">
+          <%= link_to "Add", new_manager_tag_path, :class => "btn btn-primary me-md-2" %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
