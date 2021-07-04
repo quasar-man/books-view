@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :authors
     resources :tags
+    resources :publishers
   end
 
   get "*path", controller: "application", action: "manager_render_404"

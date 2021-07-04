@@ -1,0 +1,11 @@
+<div class="content">
+  <%= form_for @publisher, url: manager_publisher_path(@publisher.id), method: :put do |f| %>
+    <p class="meintenance-form title-form">name</p>
+    <p class="meintenance-form input-form">
+      <%= f.text_field :name, :class => "form-control" %>
+    </p>
+    <p class="meintenance-form btn-form">
+      <%= f.submit "Submit", :class => "btn btn-primary me-md-2" %>
+    </p>
+  <% end %>
+</div>
