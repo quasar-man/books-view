@@ -1,7 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 
+header {
+    background-color: #34a190;
+    padding: 12px 16px;
+
+    .header-title {
+        color: #f6f6f6;
+        font: italic small-caps bold 24px cursive;
+    }
+}
 .wrapper {
     text-align: center;
+    padding-top: 12px;
     .content {
         display: inline-block;
         width: 960px;
@@ -27,4 +37,12 @@
             width: 30%;
         }
     }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 12px 16px;
+    border-top: 1px solid #cacaca;
+    width: 100%;
 }

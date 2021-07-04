@@ -11,8 +11,13 @@
   </head>
 
   <body>
+    <header>
+      <%= link_to "Books View Manager", manager_path, class: "header-title" %>
+    </header>
     <section class="wrapper">
       <%= yield %>
     </section>
+    <footer>
+    </footer>
   </body>
 </html>
