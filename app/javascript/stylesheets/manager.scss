@@ -36,6 +36,24 @@ header {
             text-align: right;
             width: 30%;
         }
+        .menu-list-li {
+            padding: 16px 0;
+            display: block;
+        }
+        .menu-btn {
+            padding: 8px 16px;
+            background-color: #6499fc;
+            color: #fafafa;
+            border-radius: 3px;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            width: 260px;
+        }
+        .menu-btn:hover {
+            background-color: #87bafc;
+        }
     }
 }
 
