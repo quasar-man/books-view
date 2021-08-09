@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :categorize
+  has_many :categorizes
 end

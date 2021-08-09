@@ -54,6 +54,30 @@ header {
         .menu-btn:hover {
             background-color: #87bafc;
         }
+        .main-menu-btn {
+            background-color: #feba67;
+        }
+        .main-menu-btn:hover {
+            background-color: #fed283;
+        }
+
+        .data-input-table {
+            width: 956px;
+            border-collapse: separate;
+            border-spacing: 4px;
+            .input-title {
+                width: 320px;
+                text-align: right;
+                padding: 8px;
+                background-color: #54efde;
+            }
+            .input-cell {
+                width: 636px;
+                text-align: left;
+                background-color: #efefef;
+                padding: 8px;
+            }
+        }
     }
 }
 

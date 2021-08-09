@@ -1,0 +1,2 @@
+module Manager::BooksHelper
+end

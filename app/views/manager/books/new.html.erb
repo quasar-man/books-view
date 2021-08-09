@@ -1,0 +1,63 @@
+<div class="content">
+  <%= form_for @book, url: manager_books_path, method: :post do |f| %>
+    <table class="data-input-table">
+      <tbody>
+        <tr>
+          <th class="input-title">Name</th>
+          <td class="input-cell">
+            <%= f.text_field :name, :class => "form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <th class="input-title">Publisher</th>
+          <td class="input-cell"></td>
+        </tr>
+        <tr>
+          <th class="input-title">Author</th>
+          <td class="input-cell"></td>
+        </tr>
+        <tr>
+          <th class="input-title">Price</th>
+          <td class="input-cell">
+            <%= f.text_field :name, :class => "form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <th class="input-title">Tag</th>
+          <td class="input-cell"></td>
+        </tr>
+        <tr>
+          <th class="input-title">Category</th>
+          <td class="input-cell"></td>
+        </tr>
+        <tr>
+          <th class="input-title">Summary</th>
+          <td class="input-cell">
+            <%= f.text_field :name, :class => "form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <th class="input-title">Release Date</th>
+          <td class="input-cell">
+            <%= f.text_field :name, :class => "form-control" %>
+          </td>
+        </tr>
+        <tr>
+          <th class="input-title">Book Image</th>
+          <td class="input-cell"></td>
+        </tr>
+        <tr>
+          <th class="input-title">Book Review</th>
+          <td class="input-cell"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" class="add-btn-area">
+            <%= f.submit "Add", :class => "btn btn-primary me-md-2" %>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  <% end %>
+</div>
