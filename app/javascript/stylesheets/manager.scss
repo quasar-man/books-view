@@ -60,7 +60,6 @@ header {
         .main-menu-btn:hover {
             background-color: #fed283;
         }
-
         .data-input-table {
             width: 956px;
             border-collapse: separate;
@@ -77,6 +76,20 @@ header {
                 background-color: #efefef;
                 padding: 8px;
             }
+        }
+        .search-btn {
+            padding: 4px 10px;
+            border: solid 1px #585858;
+            background: linear-gradient( #00ff99, #55ffaa);
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            color: #121212;
+        }
+        .search-btn:hover {
+            background: linear-gradient( #66ff99, #bbffaa);
         }
     }
 }

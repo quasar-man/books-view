@@ -10,7 +10,9 @@
         </tr>
         <tr>
           <th class="input-title">Publisher</th>
-          <td class="input-cell"></td>
+          <td class="input-cell">
+            <a id="btnPublisherSearch" href='javascript:void(0);' class="search-btn">Publisher Search</a>
+          </td>
         </tr>
         <tr>
           <th class="input-title">Author</th>
@@ -61,3 +63,5 @@
     </table>
   <% end %>
 </div>
+
+<%= javascript_pack_tag 'manager_vue' %>
