@@ -7,6 +7,11 @@ class Manager::PublishersController < ApplicationController
 
   def index
     @publishers = Publisher.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @publishers }
+    end
   end
 
   def new
@@ -38,7 +43,7 @@ class Manager::PublishersController < ApplicationController
 
     redirect_to controller: :publishers, action: :index
   end
-    
+
   private
 
     def publisher_params

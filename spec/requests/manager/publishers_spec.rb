@@ -8,6 +8,11 @@ RSpec.describe "Manager::Publishers", type: :request do
       get manager_publishers_url
       expect(response.status).to eq 200
     end
+
+    it "Request to json should be success" do
+      get manager_publishers_url(format: :json)
+      expect(response.status).to eq 200 
+    end
   end
 
   describe "GET #new" do
@@ -54,7 +59,8 @@ RSpec.describe "Manager::Publishers", type: :request do
     before do
       create(:publisher, id: 100)
     end
-    it "Success de record" do
+
+    it "Success delete record" do
       expect do
         delete manager_publisher_url(100)
       end.to change(Publisher, :count).by(-1)
