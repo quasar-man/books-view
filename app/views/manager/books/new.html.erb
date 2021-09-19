@@ -5,13 +5,15 @@
         <tr>
           <th class="input-title">Name</th>
           <td class="input-cell">
-            <%= f.text_field :name, :class => "form-control" %>
+            <%= f.text_field :name, :value => @book.name, :class => "form-control" %>
           </td>
         </tr>
         <tr>
           <th class="input-title">Publisher</th>
           <td class="input-cell">
             <a id="btnPublisherSearch" href='javascript:void(0);' class="search-btn">Publisher Search</a>
+            <%= f.hidden_field :publisher_id, :value => @book.publisher_id, :id => 'publisherId' %>
+            <span id="publisherName"></span>
           </td>
         </tr>
         <tr>
@@ -21,7 +23,7 @@
         <tr>
           <th class="input-title">Price</th>
           <td class="input-cell">
-            <%= f.text_field :name, :class => "form-control" %>
+            <%= f.text_field :price, :value => @book.price, :class => "form-control" %>
           </td>
         </tr>
         <tr>
@@ -35,13 +37,13 @@
         <tr>
           <th class="input-title">Summary</th>
           <td class="input-cell">
-            <%= f.text_field :name, :class => "form-control" %>
+            <%= f.text_field :summary, :class => "form-control" %>
           </td>
         </tr>
         <tr>
           <th class="input-title">Release Date</th>
           <td class="input-cell">
-            <%= f.text_field :name, :class => "form-control" %>
+            <%= f.text_field :release_date, :value => @book.release_date, :class => "form-control" %>
           </td>
         </tr>
         <tr>
