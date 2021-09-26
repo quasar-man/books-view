@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <button id="btnPublisherSearchModal" v-on:click="publisherSearchShow" class="hidden-btn"></button>
+    <button id="btnAuthorSearchModal" v-on:click="authorSearchShow" class="hidden-btn"></button>
     <modal name="modal-publisher-search" :height="480" :draggable="true" :resizeable="true">
       <div class="modal-inner-area">
         <h2 class="search-modal-h2">出版社検索</h2>
@@ -20,6 +21,25 @@
         </section>
       </div>
     </modal>
+    <modal name="modal-authors-search" :height="480" :draggable="true" :resizeable="true">
+      <div class="modal-inner-area">
+        <h2 class="search-modal-h2">著者検索</h2>
+        <section class="search-data-area">
+          <ul class="search-item-ul">
+            <li v-for="author in authors" class="search-item-li">
+              <label v-bind:for="author.id" class="search-item-label">
+                <input type="checkbox" v-bind:id="author.id" name="author" v-bind:value="author.id" @change="selectAuthor($event)" :data-name="author.name" />
+                {{ author.name }}
+              </label>
+            </li>
+          </ul>
+        </section>
+        <section class="search-btn-area">
+          <button @click="authorSelected()" class="search-ok-btn">OK</button>
+          <button @click="authorSearchModalClose()" class="search-close-btn">Close</button>
+        </section>
+      </div>
+    </modal>
   </div>
 </template>
 
@@ -31,6 +51,8 @@ export default {
     return {
       publishers: [],
       publisher: null,
+      authors: [],
+      selectedAuthors: {},
     }
   },
   methods: {
@@ -59,6 +81,37 @@ export default {
       const publisherName = document.getElementById('publisherName');
       if(publisherName) { publisherName.innerHTML = this.publisher.name; }
       this.publisherSearchModalClose();
+    },
+    authorSearchShow() {
+      this.$modal.show('modal-authors-search')
+      axios
+        .get('/manager/authors.json')
+        .then(res => ( this.authors = res.data ))
+    },
+    selectAuthor(e) {
+      if(e.target.checked) {
+        this.selectedAuthors[e.target.value] = {
+          id: e.target.value,
+          name: e.target.dataset.name,
+        };
+      } else {
+        delete this.selectedAuthors[e.target.value];
+      }
+    },
+    authorSearchModalClose() {
+      this.$modal.hide('modal-authors-search');
+    },
+    authorSelected() {
+      if(!this.selectedAuthors) { return; }
+
+      const selectedAuthors = Object.values(this.selectedAuthors);
+      window.test = selectedAuthors;
+
+      const authorIds = document.getElementById('authorIds');
+      if(authorIds) { authorIds.value = selectedAuthors.map((a) => { return a.id; }).join(','); }
+      const authorNames = document.getElementById('authorNames');
+      if(authorNames) { authorNames.innerHTML = selectedAuthors.map((a) => { return a.name; }).join('<br/>'); }
+      this.authorSearchModalClose();
     }
   }
 }

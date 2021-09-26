@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(app.$el);
 
   const btnPublisherSearch = document.getElementById('btnPublisherSearch');
+  const btnAuthorSearch = document.getElementById('btnAuthorSearch');
   btnPublisherSearch.addEventListener('click', () => {
     btnPublisherSearchModal.click();
+  })
+  btnAuthorSearch.addEventListener('click', () => {
+    btnAuthorSearchModal.click();
   })
 })
