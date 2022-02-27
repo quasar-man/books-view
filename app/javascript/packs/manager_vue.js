@@ -1,21 +1,15 @@
 import Vue from 'vue'
-import App from '../manager.vue'
+import ManagerAuthorSelect from '../manager_author_select.vue'
 import VModal from 'vue-js-modal'
 
 Vue.use(VModal);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    render: h => h(App),
-  }).$mount();
-  document.body.appendChild(app.$el);
+  const selectedAuthors = document.getElementById('bookAuthors').value;
+  const props = { selectedAuthors: JSON.parse(selectedAuthors)};
 
-  const btnPublisherSearch = document.getElementById('btnPublisherSearch');
-  const btnAuthorSearch = document.getElementById('btnAuthorSearch');
-  btnPublisherSearch.addEventListener('click', () => {
-    btnPublisherSearchModal.click();
-  })
-  btnAuthorSearch.addEventListener('click', () => {
-    btnAuthorSearchModal.click();
-  })
+  const managerAuthorSelect = new Vue({
+    render: h => h(ManagerAuthorSelect),
+  }).$mount();
+  document.getElementById('cellAuthorSelect').appendChild(managerAuthorSelect.$el);
 })

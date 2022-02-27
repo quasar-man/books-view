@@ -20,7 +20,6 @@
           <th class="input-title">Author</th>
           <td id="cellAuthorSelect" class="input-cell">
             <%= f.hidden_field :authors, :value => @book.authors.to_json, :id => 'bookAuthors' %>
-            <%= javascript_pack_tag 'manager_author_select' %>
           </td>
         </tr>
         <tr>
@@ -70,3 +69,5 @@
     </table>
   <% end %>
 </div>
+
+<%= javascript_pack_tag 'manager_author_select' %>
