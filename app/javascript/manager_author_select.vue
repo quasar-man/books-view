@@ -36,8 +36,7 @@ export default {
   props: {
     'selectedAuthors' : {
       type: Array,
-      default: [],
-      required: true
+      default: () => ([])
     }
   },
   data: function() {

@@ -10,10 +10,8 @@
         </tr>
         <tr>
           <th class="input-title">Publisher</th>
-          <td class="input-cell">
-            <a id="btnPublisherSearch" href='javascript:void(0);' class="search-btn">Publisher Search</a>
-            <%= f.hidden_field :publisher_id, :value => @book.publisher_id, :id => 'publisherId' %>
-            <span id="publisherName"></span>
+          <td id="cellPublisherSelect" class="input-cell">
+            <%= f.hidden_field :publisher, :value => @book.publisher.to_json, :id => 'bookPublisher' %>
           </td>
         </tr>
         <tr>
@@ -70,4 +68,4 @@
   <% end %>
 </div>
 
-<%= javascript_pack_tag 'manager_author_select' %>
+<%= javascript_pack_tag 'manager_vue' %>
