@@ -18,10 +18,9 @@
         </tr>
         <tr>
           <th class="input-title">Author</th>
-          <td class="input-cell">
-            <a id="btnAuthorSearch" href='javascript:void(0);' class="search-btn">Author Search</a>
-            <input type="hidden" id="authorIds" name="writtings[][author_id]" />
-            <p id="authorNames"></p>
+          <td id="cellAuthorSelect" class="input-cell">
+            <%= f.hidden_field :authors, :value => @book.authors.to_json, :id => 'bookAuthors' %>
+            <%= javascript_pack_tag 'manager_author_select' %>
           </td>
         </tr>
         <tr>
@@ -52,7 +51,9 @@
         </tr>
         <tr>
           <th class="input-title">Book Image</th>
-          <td class="input-cell"></td>
+          <td class="input-cell">
+            <%= f.file_field :book_images, multiple: true %>
+          </td>
         </tr>
         <tr>
           <th class="input-title">Book Review</th>
@@ -69,5 +70,3 @@
     </table>
   <% end %>
 </div>
-
-<%= javascript_pack_tag 'manager_vue' %>
