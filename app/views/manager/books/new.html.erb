@@ -28,11 +28,15 @@
         </tr>
         <tr>
           <th class="input-title">Tag</th>
-          <td class="input-cell"></td>
+          <td id="cellTagSelect"  class="input-cell">
+            <%= f.hidden_field :tags, :value => @book.tags.to_json, :id => 'bookTags' %>
+          </td>
         </tr>
         <tr>
           <th class="input-title">Category</th>
-          <td class="input-cell"></td>
+          <td id="cellCategorySelect" class="input-cell">
+            <%= f.hidden_field :categories, :value => @book.categories.to_json, :id => 'bookCategories' %>
+          </td>
         </tr>
         <tr>
           <th class="input-title">Summary</th>
