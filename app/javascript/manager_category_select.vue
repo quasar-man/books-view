@@ -22,8 +22,8 @@
           </ul>
         </section>
         <section class="search-btn-area">
-          <button @click="categorySelected()" class="search-ok-btn">OK</button>
-          <button @click="categorySearchModalClose()" class="search-close-btn">Close</button>
+          <a @click="categorySelected()" class="search-ok-btn" href="javascript:void(0)">OK</a>
+          <a @click="categorySearchModalClose()" class="search-close-btn" href="javascript:void(0)">Close</a>
         </section>
       </div>
     </modal>

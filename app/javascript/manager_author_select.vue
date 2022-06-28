@@ -22,8 +22,8 @@
           </ul>
         </section>
         <section class="search-btn-area">
-          <button @click="authorSelected()" class="search-ok-btn">OK</button>
-          <button @click="authorSearchModalClose()" class="search-close-btn">Close</button>
+          <a @click="authorSelected()" class="search-ok-btn" href="javascript:void(0)">OK</a>
+          <a @click="authorSearchModalClose()" class="search-close-btn" href="javascript:void(0)">Close</a>
         </section>
       </div>
     </modal>
