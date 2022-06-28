@@ -4,8 +4,8 @@
     <ul id="categoryNameList">
       <li v-for="category in checkedCategories" :key="category.id">
           {{ category.name }}
-        <input type="hidden" name="category[][id]" v-bind:value="category.id" />
-        <input type="hidden" name="category[][name]" v-bind:value="category.name" />
+        <input type="hidden" name="categories[][id]" v-bind:value="category.id" />
+        <input type="hidden" name="categories[][name]" v-bind:value="category.name" />
       </li>
     </ul>
     <modal name="modal-categories-search" :height="480" :draggable="true" :resizeable="true">

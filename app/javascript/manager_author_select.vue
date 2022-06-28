@@ -4,8 +4,8 @@
     <ul id="authorNameList">
       <li v-for="author in checkedAuthors" :key="author.id">
           {{ author.name }}
-        <input type="hidden" name="author[][id]" v-bind:value="author.id" />
-        <input type="hidden" name="author[][name]" v-bind:value="author.name" />
+        <input type="hidden" name="authors[][id]" v-bind:value="author.id" />
+        <input type="hidden" name="authors[][name]" v-bind:value="author.name" />
       </li>
     </ul>
     <modal name="modal-authors-search" :height="480" :draggable="true" :resizeable="true">

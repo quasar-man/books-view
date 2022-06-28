@@ -4,8 +4,8 @@
     <ul id="tagNameList">
       <li v-for="tag in checkedTags" :key="tag.id">
           {{ tag.name }}
-        <input type="hidden" name="tag[][id]" v-bind:value="tag.id" />
-        <input type="hidden" name="tag[][name]" v-bind:value="tag.name" />
+        <input type="hidden" name="tags[][id]" v-bind:value="tag.id" />
+        <input type="hidden" name="tags[][name]" v-bind:value="tag.name" />
       </li>
     </ul>
     <modal name="modal-tags-search" :height="480" :draggable="true" :resizeable="true">
